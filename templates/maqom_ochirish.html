@@ -1,0 +1,13 @@
+{% extends "admin/admin.html" %}
+
+{% block contend %}
+<div class="container">
+    <h2>Maqomni O'chirish</h2>
+    <p>Bu maqomni o'chirishga ishonchingiz komilmi: {{ maqom.maqom_nomi }}?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">O'chirish</button>
+        <a href="{% url 'admin_all' %}" class="btn btn-secondary">Bekor qilish</a>
+    </form>
+</div>
+{% endblock contend %}

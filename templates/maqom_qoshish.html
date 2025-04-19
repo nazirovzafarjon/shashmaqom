@@ -1,0 +1,64 @@
+{% extends "admin/admin.html" %}
+
+{% block contend %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <!-- Yangi kategoriya qo'shish -->
+    <div class="form-group">
+        <label for="turi">Maqom turi</label>
+        <select  id="turi" class="form-select" name="turi">
+            <option value="---------" selected disabled>
+                ---------
+            </option>
+            <option value="yangi-maqom-turi">
+                Yangi maqom turini qo'shish
+            </option>
+            {% for category in all_category %}
+            <option value="{{category.id}}">{{category}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Maqom Qo'shish</button>
+</form>
+
+
+<div class="modal" id="maqomModal" tabindex="-1" aria-labelledby="maqomModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="{% url 'category_add_view' %}" method="post">
+            {% csrf_token %}
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="maqomModalLabel">Yangi Maqom Turini Qo'shish</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Modal content here -->
+                     <label for="yangi-maqom-turi-qiymati">yangi maqom:</label>
+                     <input type="text" placeholder="yangi maqom" class="form-control" id="yangi-maqom-turi-qiymati" name="yangi-maqom-turi-qiymati">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Saqlash</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('turi').addEventListener('change', function () {
+    if (this.value === 'yangi-maqom-turi') {
+        // Trigger the modal
+        const modal = new bootstrap.Modal(document.getElementById('maqomModal'));
+        modal.show();
+
+        // Reset the dropdown to default to prevent it staying on the modal option
+        this.value = '---------';
+    }
+});
+
+</script>
+
+{% endblock contend %}

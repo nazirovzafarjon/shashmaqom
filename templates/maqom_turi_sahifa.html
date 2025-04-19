@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ tur_nomi }} maqomlari</h2>
+  <div class="row">
+    {% for mahsulot in maqomlar %}
+      <div class="col-md-4">
+        <div class="mahsulot-card">
+          <h3>{{ mahsulot.maqom_nomi }}</h3>
+          <img src="{{ mahsulot.ijrochi_surati.url }}" alt="{{ mahsulot.maqom_nomi }}" class="img-fluid">
+          <p>{{ mahsulot.maqom_sozlari|slice:":100" }}...</p>
+          <p><strong>Ijrochi:</strong> {{ mahsulot.maqom_ijrochisi }}</p>
+          <p><strong>Yaratuvchi:</strong> {{ mahsulot.maqom_yartuvchisi }}</p>
+          <a href="{% url 'maqom_korish' mahsulot.id %}" class="btn btn-primary">Ko'rish</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

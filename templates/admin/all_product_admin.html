@@ -1,0 +1,175 @@
+{% extends "admin/admin.html" %}
+
+
+{% block contend %}
+<!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<section>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-dark">Barcha maqomlar</h3>
+            <a href="{% url 'create_product' %}" class="btn btn-lg btn-gradient shadow-sm">
+                Yangi maqom <i class="fas fa-plus-circle ml-2"></i>
+            </a>
+        </div>
+
+        <div class="table-responsive">
+            <!--Table-->
+            <table class="table table-hover table-bordered align-middle text-center">
+                <!--Table head-->
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Maqom nomi</th>
+                        <th>Harakatlar</th>
+                    </tr>
+                </thead>
+                <!--Table head-->
+
+                <!--Table body-->
+                <tbody>
+                    {% for mahsulot in mahsulotlar %}
+                    <tr>
+                        <td><strong>{{ mahsulot.maqom_nomi }}</strong></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Product Actions">
+                                
+                                <a href="{% url "maqom_ochirish" mahsulot.id %}" class="btn btn-danger" title="O'chirish">
+                                    <i class="fas fa-trash-alt"></i>
+                                    O'chrish
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <!--Table body-->
+            </table>
+            <!--Table-->
+        </div>
+    </div>
+</section>
+
+<!-- Custom CSS -->
+<style>
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1; /* Lighter hover effect for table rows */
+    }
+
+    .badge-success {
+        font-size: 1rem;
+        background-color: #4CAF50; /* A more neutral shade of green */
+        color: white;
+        border-radius: 30px;
+    }
+
+    .btn-group .btn {
+        margin-right: 5px;
+        font-size: 1rem; /* Keeping buttons slightly smaller */
+        padding: 8px 14px; /* Reducing padding for smaller buttons */
+        border-radius: 4px; /* Smoother button edges for a modern look */
+        border: none; /* Remove borders for a cleaner appearance */
+    }
+
+    .btn-group .btn-info {
+        background-color: #5bc0de; /* Lighter shade of blue */
+        color: white;
+    }
+
+    .btn-group .btn-warning {
+        background-color: #f0ad4e; /* Softer orange */
+        color: white;
+    }
+
+    .btn-group .btn-danger {
+        background-color: #d9534f; /* A muted red for a more serious tone */
+        color: white;
+    }
+
+    h3 {
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #333; /* Dark gray instead of black for a softer header */
+    }
+
+    .btn-lg {
+        font-size: 1.1rem; /* Slight reduction for large buttons */
+        padding: 8px 16px;
+        background-color: #007bff; /* Standard primary button color */
+        color: white;
+        border-radius: 5px;
+    }
+
+    .table-bordered {
+        border: 1px solid #e0e0e0; /* Light gray border for a softer appearance */
+    }
+
+    .thead-dark th {
+        background-color: #f8f9fa; /* Light gray for the header instead of dark colors */
+        color: #495057; /* Darker text for good contrast */
+        border-bottom: 2px solid #dee2e6; /* Subtle bottom border */
+    }
+
+    /* Table cell styling */
+    table td, table th {
+        vertical-align: middle; /* Center text vertically */
+        padding: 12px 15px; /* Comfortable padding for readability */
+    }
+
+    /* Button Styling */
+    .btn-gradient {
+        background: linear-gradient(to right, #6f42c1, #007bff); /* Ranglar biroz tinchroq */
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    /* Hover effekti */
+    .btn-gradient:hover {
+        background: linear-gradient(to right, #007bff, #6f42c1); /* Ranglar o'zgaradi */
+        color: white;
+        box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3), 0 0 15px rgba(111, 66, 193, 0.4);
+        transform: translateY(-2px); /* Tugma biroz ko'tariladi */
+    }
+
+    /* Glow effekti */
+    .btn-gradient::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
+    .btn-gradient:hover::before {
+        opacity: 1; /* Glow effekti paydo bo'ladi */
+    }
+
+    /* Button hover text color */
+    .btn-gradient i {
+        margin-left: 8px;
+    }
+
+    /* Ekran uchun moslashtirish */
+    @media (max-width: 768px) {
+        .btn-gradient {
+            font-size: 0.9rem;
+            padding: 8px 15px;
+        }
+    }
+</style>
+
+{% endblock contend %}

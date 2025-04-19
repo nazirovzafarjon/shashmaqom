@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    {% if category_name %}
+    <h1 class="text-center mb-5">Kategoriya: {{ category_name }}</h1>
+    {% for categories in categories %}
+    <div class="row justify-content-center">
+        
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ categories.ijrochi_surati.url }}" class="card-img-top" alt="{{ categories.maqom_turi }}" style="object-fit: cover; height: 200px; width: 100%;">
+                <div class="card-body text-center">
+<<<<<<< HEAD
+                    <h2 class="card-title">Nomi: {{ categories.maqom_nomi }}</h2>
+=======
+                    <h2 class="card-title">{{ categories.maqom_turi.tur_nomi }}</h2>
+>>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
+                    <p class="card-text"><strong>Ijrochi:</strong> {{ categories.maqom_ijrochisi }}</p>
+                    <a href="{% url 'maqom_korish' categories.id %}" class="btn btn-primary">To'liq ko'rish</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+
+    {% else %}
+        <h1 class="text-center mb-5">Shashmaqom</h1>
+        
+        <div class="row justify-content-center">
+            {% if all_category %}
+            {% for mahsulot in mahsulotlar %}
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="{{ mahsulot.ijrochi_surati.url }}" class="card-img-top" alt="{{ mahsulot.maqom_turi }}" style="object-fit: cover; height: 200px; width: 100%;">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">{{ mahsulot.maqom_turi.tur_nomi }}</h2>
+                        <p class="card-text"><strong>Ijrochi:</strong> {{ mahsulot.maqom_ijrochisi }}</p>
+                        <a href="{% url 'maqom_korish' mahsulot.id %}" class="btn btn-primary">To'liq ko'rish</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-md-12">
+<<<<<<< HEAD
+                <p class="text-center">Maqomlar hali mavjud emas .</p>
+=======
+                <p class="text-center">Bu kategoriyaga tegishli mahsulotlar mavjud emas.</p>
+>>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
+            </div>
+            {% endif %}
+            {% endif %}
+    </div>
+</div>
+{% endblock %}

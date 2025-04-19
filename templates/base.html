@@ -1,0 +1,311 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Maqomlar</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "icomoon/icomoon.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/vendor.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+
+</head>
+<style>
+	#carouselExampleAutoplaying .carousel-inner .carousel-item img {
+    max-width: 1200px; /* Rasmlarning kengligini 80% ga qisqartirish */
+    height: 700px;   /* Balandligini avtomatik o'zgartirish */
+	#carouselExampleAutoplaying {
+    position: relative;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.carousel-control-prev {
+    left: 10px; /* O‘ng tomonga 10px masofa */
+}
+
+.carousel-control-next {
+    right: 10px; /* Chap tomonga 10px masofa */
+}
+}
+<<<<<<< HEAD
+#footer {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-image {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 30px;
+}
+
+.footer-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.company-brand {
+    flex: 2;
+    max-width: 70%;
+}
+
+.company-brand h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.company-brand p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+=======
+>>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
+
+</style>
+<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+
+	<div id="header-wrap">
+
+		<div class="top-content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="social-links">
+						</div><!--social-links-->
+					</div>
+					<div class="col-md-6">
+						<div class="right-element">
+
+							
+ 
+						</div><!--top-right-->
+					</div>
+
+				</div>
+			</div>
+		</div><!--top-content-->
+
+		<header id="header">
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-md-2">
+						<div class="main-logo">
+							<a style="font-family:Georgia, 'Times New Roman', Times, serif;color: rgb(66, 59, 59);font-size: 30px;padding-left: 30px;" href="{% url "barchamahsulotlar" %}">Shashmaqom</a>
+						</div>
+
+					</div>
+
+					<div class="col-md-10">
+
+						<nav id="navbar">
+							<div class="main-menu stellarnav">
+							  <ul class="menu-list">
+								<!-- Bosh sahifa menyusi, 'boshsahifa' nomli URLga havola qiladi -->
+								<li class="menu-item"><a href="{% url 'barchamahsulotlar' %}">Bosh sahifa</a></li>
+								<!-- Biz haqimizda bo'limi, bu statik havola -->
+								<!-- Buzruk maqomlari uchun 'barchamahsulotlar' URLiga havola qiladi -->
+								<li class="menu-item"><a href="{% url "Bycategory" 'Buzruk' %}" class="nav-link">Buzruk</a></li>
+								<!-- Rost maqomlari uchun statik havola -->
+								<li class="menu-item"><a href="{% url "Bycategory" 'Rost' %}" class="nav-link">Rost</a></li>
+								<!-- Navo maqomlari uchun statik havola -->
+								<li class="menu-item"><a href="{% url "Bycategory" 'Navo' %}" class="nav-link">Navo</a></li>
+								<!-- Dugoh maqomlari uchun statik havola -->
+								<li class="menu-item"><a href="{% url "Bycategory" 'Dugoh' %}" class="nav-link">Dugoh</a></li>
+								<!-- Segoh maqomlari uchun statik havola -->
+								<li class="menu-item"><a href="{% url "Bycategory" 'Segoh' %}" class="nav-link">Segoh</a></li>
+								<!-- Iroq maqomlari uchun statik havola -->
+								<li class="menu-item"><a href="{% url "Bycategory" 'Iroq' %}" class="nav-link">Iroq</a></li>
+<<<<<<< HEAD
+								<!-- Oltin me'ros uchun statik havola -->
+								<li class="menu-item"><a href="{% url "Bycategory" 'Oltin_meros' %}" class="nav-link">Oltin me'ros</a></li>
+=======
+>>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
+							  </ul>
+						  
+							  <div class="hamburger">
+								<span class="bar"></span>
+								<span class="bar"></span>
+								<span class="bar"></span>
+							  </div>
+							</div>
+						  </nav>
+						  
+
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+<!-- Carousel Section (Added below the navbar) -->
+<div class="container">
+	<section id="carousel-section" class="my-5">
+		<div style="margin-left: 40px;" id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="{% static 'images/ansambl.jpg' %}" class="d-block w-100" alt="Carousel Image 1">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'images/Mamurjon.jpg' %}" class="d-block w-100" alt="Carousel Image 2">
+				</div>
+				<div class="carousel-item">
+<<<<<<< HEAD
+					<img src="{% static 'images/photo_2025-04-16_15-18-34.jpg' %}" class="d-block w-100" alt="Carousel Image 3">
+=======
+					<img src="{% static 'images/photo_2024-11-26_01-55-07.jpg' %}" class="d-block w-100" alt="Carousel Image 3">
+>>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
+				</div>
+			</div>
+			<button style="margin-top: 300px;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button style="margin-top: 300px;" class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</section>
+</div>
+
+	</div><!--header-wrap-->
+	
+
+
+
+		<div class="container">
+			<div class="row">
+				<div class="inner-content">
+					<div class="logo-wrap">
+						<div class="grid align-center pt-5 gap-4">
+							<a href="#"><img style="width: 100px;height: 60px;" src="{% static "images/client-image1.png" %}" alt="client"></a>
+							<a href="#"><img style="width: 100px;height: 60px;" src="{% static "images/client-image2.png" %}" alt="client"></a>
+							<a href="#"><img style="width: 100px;height: 60px;" src="{% static "images/client-image3.png" %}" alt="client"></a>
+							<a href="#"><img style="width: 100px;height: 60px;" src="{% static "images/client-image4.png" %}" alt="client"></a>
+							<a href="#"><img style="width: 100px;height: 60px;" src="{% static "images/client-image5.png" %}" alt="client"></a>
+						</div>
+					</div><!--image-holder-->
+				</div>
+			</div>
+		</div>
+
+	<section id="featured-books" class="py-5 my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					{% block content %}
+					  
+					{% endblock content %}
+
+		</div>
+	</section>
+
+	
+
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+<<<<<<< HEAD
+				<div class="footer-content">
+					<div class="footer-image">
+						<img src="{%static "images/photo_2025-04-16_15-18-34.jpg"%}" alt="Shashmaqom Image">
+					</div>
+					<div class="company-brand">
+						<h2 class="text-center">Bu sayt haqida!</h2>
+						<p class="text-center">
+							Ushbu sayt o‘zbek xalqining boy milliy musiqa merosi — Shashmaqom va bastakorlik san’ati haqida foydali ma’lumotlarni o‘zbek milliy san’ati davomchilari hamda keng jamoatchilikka taqdim etishga qaratilgan. Sayt foydalanuvchilari e’tiboriga milliy mumtoz ashulalarimiz — Shashmaqom, Farg‘ona-Toshkent maqom yo‘llari, shuningdek, ustoz xonandalar tomonidan bastalangan bastakorlik ashulalari audiolari va ularning g‘azallari mualliflarning to‘plamlariga tayanib xatolari tuzatilgan holdagi matnlari lotin alifbosida taqdim etiladi.
+ 							Ushbu loyiha Qo‘qon Davlat Universiteti talabasi Xoliqnazarova Muhtaramxon tomonidan yaratilgan.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+=======
+
+				<div class="align-center">
+
+					<div class="">
+						<div class="company-brand">
+							<h2>Bu sayt haqida !</h2>
+							<p class="text-center">Ushbu sayt, o'zbek xalqining milliy musiqa me'rosi hisoblangan shashmaqom, bastakorlik asarlar haqida foydali  ma'lumotlarni o'zbek milliy san'ati davomchilari va xalqimiz uchun taqdim etishga qaratilgan. Sayt foydalanuvchilariga Milliy mumtoz ashulalarimiz, ya'ni Shashmaqom, Farg'ona-Toshkent maqom yo'llari, ustoz xofizlar bastalagan bastakorlik ashulalarini audiolari va  so'zlari bilan birga taqdim etiladi. Bu loyiha O'zbekiston san'ati va madaniyat instituti Farg'ona mintaqaviy filiali talabasi Xoliqnazarova Muhtaramxon tomonidan yaratildi
+								</p>
+						</div>
+					</div>
+
+				</div>
+
+				
+	</footer>
+>>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					
+
+				</div><!--footer-bottom-content-->
+			</div>
+		</div>
+	</div>
+
+	<script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<script src="{% static "js/plugins.js" %}"></script>
+	<script src="{% static "js/script.js" %}"></script>
+	<script>
+		var myCarousel = document.querySelector('#carouselExampleAutoplaying')
+		var carousel = new bootstrap.Carousel(myCarousel, {
+		  interval: 2000,
+		  ride: 'carousel'
+		})
+	</script>
+	
+
+</body>
+
+</html>
