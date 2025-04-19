@@ -25,12 +25,10 @@ SECRET_KEY = 'django-insecure-_s02!k4^y6ic^e__$-ccivyytdw+x33p2m#9b@d0=8$1_+rxfq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['uzbek-milliy-musiqa-merosi.uz', 'www.uzbek-milliy-musiqa-merosi.uz']
 
-=======
+
 ALLOWED_HOSTS = []
->>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
+
 
 
 # Application definition

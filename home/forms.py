@@ -19,10 +19,7 @@ class MaqomlarModelForm(forms.ModelForm):
 
         # Optionally, use maqom_turi if needed (e.g., for validation or defaults)
         self.maqom_turi = maqom_turi
-<<<<<<< HEAD
         
-=======
->>>>>>> 27edca7a92b339cfc0eab8e9374569c5d5b1e4d1
     # Maqom turi tanlashda yangi kategoriya qo'shish imkoniyati
     def clean_maqom_turi(self):
         tur_nomi = self.cleaned_data.get('maqom_turi')
